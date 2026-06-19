@@ -1,0 +1,17 @@
+Host bastion
+    HostName 98.81.103.190
+    User ubuntu
+    IdentityFile "C:\Users\admin\Desktop\Lab_Vin\Track 2\Day16-Track2-Assignment\terraform\lab-key"
+    IdentitiesOnly yes
+
+Host node
+    HostName 10.0.10.170
+    User ec2-user
+    ProxyJump bastion
+    IdentityFile "C:\Users\admin\Desktop\Lab_Vin\Track 2\Day16-Track2-Assignment\terraform\lab-key"
+    IdentitiesOnly yes
+
+Host *
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    ServerAliveInterval 30
